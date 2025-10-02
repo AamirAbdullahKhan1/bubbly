@@ -5,6 +5,7 @@ import Typo from '@/components/Typo'
 import { colors, spacingX, spacingY } from '@/constants/theme'
 import { verticalScale } from '@/utils/styling'
 import Animated, { FadeIn } from 'react-native-reanimated'
+import Button from '@/components/Button'
 
 const welcome = () => {
   return (
@@ -35,6 +36,9 @@ const welcome = () => {
           </Typo>
           
         </View>
+        <Button style = {{backgroundColor: colors.white}}>
+          <Typo size={23} fontWeight={'bold'}>Get Started</Typo>
+        </Button>
       </View>
     </ScreenWrapper>
   )
