@@ -38,7 +38,7 @@ const ScreenWrapper = ({
         <StatusBar barStyle={'light-content'} backgroundColor={'transparent'}/>
         {children}
       </View>
-    </ImageBackground>
+    </ImageBackground> 
   )
 }
 
