@@ -4,6 +4,7 @@ import { colors } from '@/constants/theme'
 import { BackButtonProps } from '@/types'
 import { useRouter } from 'expo-router'
 import {ChevronLeft} from "lucide-react-native"
+import { verticalScale } from '@/utils/styling'
 
 const BackButton = ({
     style,
@@ -13,7 +14,7 @@ const BackButton = ({
     const router = useRouter()
   return (
     <TouchableOpacity onPress = {() => router.back()} style = {[styles.button, style]}>
-      <ChevronLeft/>
+      <ChevronLeft size={verticalScale(iconSize)} color={color} />
     </TouchableOpacity>
   )
 }

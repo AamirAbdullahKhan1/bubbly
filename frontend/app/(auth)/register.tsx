@@ -1,4 +1,4 @@
-import { KeyboardAvoidingView, Platform, StyleSheet, Text, View } from 'react-native'
+import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import ScreenWrapper from '@/components/ScreenWrapper'
 import Typo from '@/components/Typo'
@@ -11,7 +11,20 @@ const Register = () => {
         <ScreenWrapper showPattern = {true}>
           <View style = {styles.container}>
             <View style = {styles.header}>
-                <BackButton/>
+                <BackButton iconSize={25}/>
+                <Typo size={15} color={colors.white}>
+                    Need Some Help?
+                </Typo>
+            </View>
+
+            <View style = {styles.content}>
+                <ScrollView contentContainerStyle = {styles.form} showsVerticalScrollIndicator = {false}>
+                    <View style = {{gap: spacingY._10, marginBottom: spacingY._15}}>
+                        <Typo size={28} fontWeight={'600'}>
+                            Getting Started
+                        </Typo>
+                    </View>
+                </ScrollView>
             </View>
           </View>
         </ScreenWrapper>
