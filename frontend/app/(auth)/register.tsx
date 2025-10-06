@@ -1,4 +1,4 @@
-import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Alert, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React, { useRef, useState } from 'react'
 import ScreenWrapper from '@/components/ScreenWrapper'
 import Typo from '@/components/Typo'
@@ -18,7 +18,10 @@ const Register = () => {
     const router = useRouter()
 
     const handleSubmit = async () => {
-
+        if(!emailRef.current || !passwordRef.current || !nameRef.current){
+            Alert.alert('Sign Up', "Please fill in all the fields")
+            return
+        }
     }
   return (
     <KeyboardAvoidingView style = {{flex: 1 }} behavior={Platform.OS == 'ios' ? "padding" : "height"}>
@@ -70,7 +73,7 @@ const Register = () => {
                             <Typo>
                                 Already have an account?
                             </Typo>
-                            <Pressable onPress = {() => router.push('/(auth)/register')}>
+                            <Pressable onPress = {() => router.push('/(auth)/login')}>
                                 <Typo fontWeight={'bold'} color={colors.primaryDark}>Login</Typo>
                             </Pressable>
                         </View>
